@@ -1,17 +1,28 @@
+import { debounce } from '@solid-primitives/scheduled'
 import { Show, createSignal, mergeProps } from 'solid-js'
 
 interface SearchBarProps {
-  value?: string
-  onInput?: (e: any) => void
+  search?: string
+  onSearch?: (e: any) => void
 }
 
 export default function SearchBar(_props: SearchBarProps) {
-  const { value, onInput } = mergeProps({}, _props)
-  const clear = () => {}
+  const props = mergeProps({ search: '' }, _props)
 
-  const handleInput = (e: any) => {
-    onInput(e)
+  const [keyword, setKeyword] = createSignal('')
+
+  const debouncedKeyword = debounce((str: string) => setKeyword(str), 250);
+
+  const clear = () => {
+    setKeyword('')
+    props.onSearch('')
   }
+
+  const update = (e: any) => {
+    debouncedKeyword(e.target.value)
+    props.onSearch(e.target.value)
+  }
+
   return (
     <div class="flex border-x border-b border-b px-4 py-3 outline-none md:flex md:border-t border-base md:rounded md:py-1">
       <div class="m-auto inline-block flex-none align-middle lh-1em opacity-60">
@@ -26,16 +37,16 @@ export default function SearchBar(_props: SearchBarProps) {
           placeholder="Search Components..."
           autofocus
           autocomplete="off"
-          value={value}
-          onInput={handleInput}
+          value={keyword()}
+          onInput={update}
         />
       </form>
-      <Show when={value}>
+      <Show when={keyword()}>
         <button
           class="flex items-center opacity-60 hover:opacity-80"
           onClick={clear}
         >
-          <div class="i-carbon-close m-auto text-lg -mr-1" />
+          <div class="i-carbon-close m-auto text-lg -mr-1" onClick={clear} />
         </button>
       </Show>
     </div>

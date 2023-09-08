@@ -1,48 +1,35 @@
-import { Show, createSignal, mergeProps } from 'solid-js'
 import SearchBar from './SearchBar'
-
+import Collection from './Collection'
+import { Octokit } from 'octokit'
 
 export default function Main() {
-  const handleInput= (e)=>{
-    console.log('handleInput',e)
+  const handleSearch = async (e) => {
+    console.log('handleSearch', e)
+    // await search(e)
+  }
+
+  const search = async (key: string) => {
+    const octokit = new Octokit()
+    // get solidjs/solid repo info
+    const result = await octokit.request('GET /search/repositories', {
+      q: key,
+      sort: 'stars',
+      order: 'desc',
+      per_page: 10,
+    })
+    console.log('result', result)
   }
 
   return (
     <main class="flex flex-auto flex-col of-hidden">
-    <div class="grid-rows-[max-content_1fr] of-hidden">
-      <div class="md:mx-6 md:mt-6">
-        <SearchBar onInput={handleInput}/>
-      </div>
-      <div class="mt-6 of-y-auto">
-        <div class="mt-6 px-2 text-lg op-50">Result</div>
-        <div class="collections-list grid gap-2 of-hidden p-2 p-2">
-          <a class="hover:text-primary !hover:border-primary relative grid grid-cols-[1fr_90px] translate-z-0 items-center gap2 border p3 transition-all border-base color-base hover:(shadow)">
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-          </a>
-          <a class="hover:text-primary !hover:border-primary relative grid grid-cols-[1fr_90px] translate-z-0 items-center gap2 border p3 transition-all border-base color-base hover:(shadow)">
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-          </a>
-          <a class="hover:text-primary !hover:border-primary relative grid grid-cols-[1fr_90px] translate-z-0 items-center gap2 border p3 transition-all border-base color-base hover:(shadow)">
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-            <p>xxxx</p>
-          </a>
+      <div class="grid-rows-[max-content_1fr] of-hidden">
+        <div class="md:mx-6 md:mt-6">
+          <SearchBar onSearch={handleSearch} />
+        </div>
+        <div class="mt-4 of-y-auto">
+          <Collection />
         </div>
       </div>
-    </div>
-  </main>
+    </main>
   )
 }
