@@ -1,10 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import '@unocss/reset/tailwind.css'
+import Layout from '@/layouts/Layout.astro'
+import Navbar from '@/components/Navbar.astro'
+import SearchBar from '@/components/SearchBar.tsx'
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    Hello Astro.
+  <Navbar />
+  <main class="flex flex-auto flex-col of-hidden">
+    <div class="grid-rows-[max-content_1fr] of-hidden">
+      <div class="md:mx-6 md:mt-6">
+        <SearchBar />
+      </div>
+      <div class="mt-6 of-y-auto">
+        <div class="mt-6 px-2 text-lg op-50">Result</div>
+        <div class="collections-list grid gap-2 of-hidden p-2 p-2">
+          <a class="hover:text-primary !hover:border-primary relative grid grid-cols-[1fr_90px] translate-z-0 items-center gap2 border p3 transition-all border-base color-base hover:(shadow)">
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+          </a>
+          <a class="hover:text-primary !hover:border-primary relative grid grid-cols-[1fr_90px] translate-z-0 items-center gap2 border p3 transition-all border-base color-base hover:(shadow)">
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+          </a>
+          <a class="hover:text-primary !hover:border-primary relative grid grid-cols-[1fr_90px] translate-z-0 items-center gap2 border p3 transition-all border-base color-base hover:(shadow)">
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+            <p>xxxx</p>
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
+
+<style>
+  .collections-list {
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  }
+</style>

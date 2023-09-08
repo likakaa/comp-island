@@ -18,10 +18,10 @@
     "solid-js": "^1.7.11"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.21",
+    "@solid-primitives/media": "^2.2.5",
     "@typescript-eslint/parser": "^6.6.0",
-    "@unocss/astro": "^0.55.7",
     "@unocss/eslint-config": "^0.55.7",
-    "@unocss/reset": "^0.55.7",
     "eslint": "^8.48.0",
     "eslint-plugin-astro": "^0.29.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
