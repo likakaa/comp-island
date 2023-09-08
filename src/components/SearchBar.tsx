@@ -1,4 +1,17 @@
-export default function SearchBar() {
+import { Show, createSignal, mergeProps } from 'solid-js'
+
+interface SearchBarProps {
+  value?: string
+  onInput?: (e: any) => void
+}
+
+export default function SearchBar(_props: SearchBarProps) {
+  const { value, onInput } = mergeProps({}, _props)
+  const clear = () => {}
+
+  const handleInput = (e: any) => {
+    onInput(e)
+  }
   return (
     <div class="flex border-x border-b border-b px-4 py-3 outline-none md:flex md:border-t border-base md:rounded md:py-1">
       <div class="m-auto inline-block flex-none align-middle lh-1em opacity-60">
@@ -13,11 +26,18 @@ export default function SearchBar() {
           placeholder="Search Components..."
           autofocus
           autocomplete="off"
+          value={value}
+          onInput={handleInput}
         />
       </form>
-      <button class="flex items-center opacity-60 hover:opacity-80">
-        <div class="i-carbon-close m-auto text-lg -mr-1"  />
-      </button>
+      <Show when={value}>
+        <button
+          class="flex items-center opacity-60 hover:opacity-80"
+          onClick={clear}
+        >
+          <div class="i-carbon-close m-auto text-lg -mr-1" />
+        </button>
+      </Show>
     </div>
   )
 }
