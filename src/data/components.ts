@@ -1,4 +1,4 @@
-import { ComponentType, type ComponentInfo, Framework } from "./types";
+import { type ComponentInfo, ComponentType, Framework } from './types'
 
 export const components: ComponentInfo[] = [
   {
@@ -24,5 +24,5 @@ export const components: ComponentInfo[] = [
     repository: 'https://github.com/ant-design/ant-design',
     homepage: 'https://ant.design/',
     description: 'A UI Design Language',
-  }
+  },
 ]

@@ -2,7 +2,6 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
-  presetTypography,
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
@@ -31,12 +30,8 @@ export default defineConfig({
         800: '#999',
         900: '#aaa',
       },
-    }
+    },
   },
-  presets: [
-    presetUno(),
-    presetAttributify(),
-    presetIcons(),
-  ],
+  presets: [presetUno(), presetAttributify(), presetIcons()],
   transformers: [transformerVariantGroup(), transformerDirectives()],
 })

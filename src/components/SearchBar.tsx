@@ -11,16 +11,16 @@ export default function SearchBar(_props: SearchBarProps) {
 
   const [keyword, setKeyword] = createSignal('')
 
-  const debouncedKeyword = debounce((str: string) => setKeyword(str), 250);
+  const debouncedKeyword = debounce((str: string) => setKeyword(str), 250)
 
   const clear = () => {
     setKeyword('')
-    props.onSearch('')
+    props.onSearch?.('')
   }
 
   const update = (e: any) => {
     debouncedKeyword(e.target.value)
-    props.onSearch(e.target.value)
+    props.onSearch?.(e.target.value)
   }
 
   return (

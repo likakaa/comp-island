@@ -1,33 +1,39 @@
 {
   "name": "comp-island",
-  "version": "1.0.0",
-  "packageManager": "pnpm@7.28.0",
+  "type": "module",
   "description": "Web Component Island",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --fix"
+    "dev": "solid-start dev",
+    "build": "solid-start build",
+    "start": "solid-start start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/solid-js": "^3.0.0",
-    "@solid-primitives/scheduled": "^1.4.1",
-    "astro": "^3.0.10",
+    "@solidjs/meta": "^0.28.6",
+    "@solidjs/router": "^0.8.3",
     "octokit": "^3.1.0",
-    "solid-js": "^1.7.11"
+    "solid-js": "^1.7.11",
+    "solid-start": "^0.3.5"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.21",
     "@solid-primitives/media": "^2.2.5",
-    "@typescript-eslint/parser": "^6.6.0",
-    "@unocss/eslint-config": "^0.55.7",
-    "eslint": "^8.48.0",
-    "eslint-plugin-astro": "^0.29.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-solid": "^0.13.0",
-    "unocss": "^0.55.7"
+    "@solid-primitives/scheduled": "^1.4.1",
+    "@types/node": "^18.17.5",
+    "@xbmlz/eslint-config-prettier": "^0.1.17",
+    "@xbmlz/eslint-config-solid": "^0.1.17",
+    "@xbmlz/eslint-config-ts": "^0.1.17",
+    "esbuild": "^0.14.54",
+    "eslint": "^8.49.0",
+    "postcss": "^8.4.28",
+    "solid-start-netlify": "^0.3.5",
+    "solid-start-node": "^0.3.5",
+    "typescript": "^4.9.5",
+    "unocss": "^0.55.7",
+    "vite": "^4.4.9"
   }
 }
