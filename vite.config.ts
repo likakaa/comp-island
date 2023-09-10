@@ -7,7 +7,7 @@ import netlifyAdapter from 'solid-start-netlify'
 export default defineConfig({
   plugins: [
     solid({
-      adapter: netlifyAdapter(),
+      adapter: netlifyAdapter({ edge: true }),
     }),
     unocss(),
   ],
