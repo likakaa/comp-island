@@ -3,19 +3,14 @@ import Collection from '~/components/Collection'
 import { Navbar } from '~/components/Navbar'
 import SearchBar from '~/components/SearchBar'
 import { filterComponents } from '~/data'
-import type { ComponentInfo } from '~/data/types'
 
 export default function Home() {
-  const [components, setComponents] = createSignal<ComponentInfo[]>([])
-  const handleSearch = async (_value: string) => {
-    const value = _value.trim()
-    if (!value) {
-      setComponents([])
-      return
-    }
+  const [components, setComponents] = createSignal([])
+  const handleSearch = async (value: string) => {
     const res = await filterComponents(value)
     setComponents(res)
   }
+  handleSearch()
   return (
     <main class="flex flex-col h-screen overflow-hidden bg-base">
       <div class="h-full flex-auto overflow-overlay">

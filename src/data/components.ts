@@ -1,12 +1,21 @@
-// DO NOTE EDIT THIS FILE
+/* eslint-disable prettier/prettier */
+
+// DO NOTE EDIT THIS FILE, IT IS GENERATED AUTOMATICALLY
 
 import type { ComponentInfo } from './types'
 
 export const components: ComponentInfo[] = [
   {
     name: 'element',
-    type: ['ui'],
-    framework: ['vue'],
+    author: 'ElemeFE',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/12810740?v=4',
+    authorUrl: 'https://github.com/ElemeFE',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'vue',
+    ],
     repository: 'https://github.com/ElemeFE/element',
     homepage: 'https://element.eleme.io/',
     description: 'A Vue.js 2.0 UI Toolkit for Web',
@@ -19,8 +28,15 @@ export const components: ComponentInfo[] = [
   },
   {
     name: 'vux',
-    type: ['ui'],
-    framework: ['vue'],
+    author: 'airyland',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/559179?v=4',
+    authorUrl: 'https://github.com/airyland',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'vue',
+    ],
     repository: 'https://github.com/airyland/vux',
     homepage: 'https://vux.li',
     description: 'Mobile UI Components based on Vue & WeUI',
@@ -33,8 +49,15 @@ export const components: ComponentInfo[] = [
   },
   {
     name: 'iview',
-    type: ['ui'],
-    framework: ['vue'],
+    author: 'iview',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/20693613?v=4',
+    authorUrl: 'https://github.com/iview',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'vue',
+    ],
     repository: 'https://github.com/iview/iview',
     homepage: 'http://iview.talkingdata.com',
     description: 'A high quality UI Toolkit built on Vue.js 2.0',
@@ -47,8 +70,15 @@ export const components: ComponentInfo[] = [
   },
   {
     name: 'mint-ui',
-    type: ['ui'],
-    framework: ['vue'],
+    author: 'ElemeFE',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/12810740?v=4',
+    authorUrl: 'https://github.com/ElemeFE',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'vue',
+    ],
     repository: 'https://github.com/ElemeFE/mint-ui',
     homepage: 'http://mint-ui.github.io/#!/en',
     description: 'Mobile UI elements for Vue.js',
@@ -61,8 +91,15 @@ export const components: ComponentInfo[] = [
   },
   {
     name: 'muse-ui',
-    type: ['ui'],
-    framework: ['vue'],
+    author: 'museui',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/22283362?v=4',
+    authorUrl: 'https://github.com/museui',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'vue',
+    ],
     repository: 'https://github.com/museui/muse-ui',
     homepage: 'https://muse-ui.org',
     description: 'Material Design UI library for Vuejs 2.0',
@@ -72,5 +109,89 @@ export const components: ComponentInfo[] = [
     stars: 8273,
     createAt: '2016-09-19T00:51:10Z',
     updateAt: '2023-09-08T17:14:57Z',
+  },
+  {
+    name: 'vue-material',
+    author: 'vuematerial',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/23659108?v=4',
+    authorUrl: 'https://github.com/vuematerial',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'vue',
+    ],
+    repository: 'https://github.com/vuematerial/vue-material',
+    homepage: 'https://www.creative-tim.com/vuematerial',
+    description: 'Vue.js Framework - ready-to-use Vue components with Material Design, free forever.',
+    language: 'Vue',
+    license: 'MIT License',
+    openIssues: 245,
+    stars: 9812,
+    createAt: '2016-06-17T22:41:53Z',
+    updateAt: '2023-09-09T22:30:41Z',
+  },
+  {
+    name: 'ant-design',
+    author: 'ant-design',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/12101536?v=4',
+    authorUrl: 'https://github.com/ant-design',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'react',
+    ],
+    repository: 'https://github.com/ant-design/ant-design',
+    homepage: 'https://ant.design',
+    description: 'An enterprise-class UI design language and React UI library',
+    language: 'TypeScript',
+    license: 'MIT License',
+    openIssues: 999,
+    stars: 87497,
+    createAt: '2015-04-24T15:37:24Z',
+    updateAt: '2023-09-11T06:03:08Z',
+  },
+  {
+    name: 'material-ui',
+    author: 'mui',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/33663932?v=4',
+    authorUrl: 'https://github.com/mui',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'react',
+    ],
+    repository: 'https://github.com/mui/material-ui',
+    homepage: 'https://mui.com/core/',
+    description: 'MUI Core: Ready-to-use foundational React components, free forever. It includes Material UI, which implements Google\'s Material Design.',
+    language: 'TypeScript',
+    license: 'MIT License',
+    openIssues: 1615,
+    stars: 88695,
+    createAt: '2014-08-18T19:11:54Z',
+    updateAt: '2023-09-11T04:52:41Z',
+  },
+  {
+    name: 'chakra-ui',
+    author: 'chakra-ui',
+    authorAvatar: 'https://avatars.githubusercontent.com/u/54212428?v=4',
+    authorUrl: 'https://github.com/chakra-ui',
+    type: [
+      'ui',
+    ],
+    framework: [
+      'react',
+    ],
+    repository: 'https://github.com/chakra-ui/chakra-ui',
+    homepage: 'https://chakra-ui.com',
+    description: '⚡️ Simple, Modular & Accessible UI Components for your React Applications',
+    language: 'TypeScript',
+    license: 'MIT License',
+    openIssues: 205,
+    stars: 34287,
+    createAt: '2019-08-17T14:27:54Z',
+    updateAt: '2023-09-11T02:51:46Z',
   },
 ]

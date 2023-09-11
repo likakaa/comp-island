@@ -1,15 +1,11 @@
 export type Framework = 'vue' | 'react' | 'angular' | 'svelte' | 'vanilla'
-export type ComponentType =
-  | 'ui'
-  | 'chart'
-  | 'table'
-  | 'form'
-  | 'map'
-  | 'editor'
-  | 'other'
+export type ComponentType = 'ui' | 'chart' | 'table' | 'form' | 'map' | 'editor' | 'other'
 
 export interface ComponentInfo {
   name: string
+  author: string
+  authorUrl?: string
+  authorAvatar: string
   type: ComponentType[]
   framework: Framework[]
   repository: string

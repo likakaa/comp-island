@@ -9,6 +9,8 @@ const fzf = new AsyncFzf(components, {
 })
 
 export const filterComponents = async (q: string) => {
-  const result = await fzf.find(q)
+  if (!q) return components
+  const trimmed = q.trim()
+  const result = await fzf.find(trimmed)
   return result.map((i) => i.item)
 }
