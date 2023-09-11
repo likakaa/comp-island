@@ -14,15 +14,20 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 18
+      
       - name: Install dependencies
         run: npm install
+      
       - name: Update components info
         run: npx esno ./scripts/update-components.ts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit and push
+      
+      - name: Commit
         run: |-
-          git config --global user.email "bot@github.com" && git config --global user.name "Bot"
+          git config --global user.email "997909544@qq.com" && git config --global user.name "xbmlz"
           git diff
           git add . && git commit -m ":memo: Update components info" || exit 0
-          git push
+
+      - name: Push
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
