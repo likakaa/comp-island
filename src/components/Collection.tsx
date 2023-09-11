@@ -1,13 +1,17 @@
-import { For } from 'solid-js'
-import { components } from '~/data/components'
+import { For, mergeProps } from 'solid-js'
+import type { ComponentInfo } from '~/data/types'
 
-export default function Collection() {
-  // TODO fetch data from @/data
+interface CollectionProps {
+  components: ComponentInfo[]
+}
+
+export default function Collection(_props: CollectionProps) {
+  const props = mergeProps({}, _props)
   return (
     <div>
       <div class="mt-6 px-2 text-lg op-50">Result</div>
       <div class="collections-list grid gap-2 of-hidden p-2 p-2">
-        <For each={components} fallback={<div>loading...</div>}>
+        <For each={props.components} fallback={<div>loading...</div>}>
           {(item) => (
             /* TODO 需要封装一个组件
             1. 根据`type`显示不同的 icon
@@ -18,6 +22,12 @@ export default function Collection() {
               {/* <div>{item.description}</div> */}
               <div>{item.framework}</div>
               <div>{item.type}</div>
+              <div>{item.repository}</div>
+              <div>{item.license}</div>
+              <div>{item.stars}</div>
+              <div>{item.openIssues}</div>
+              <div>{item.createAt}</div>
+              <div>{item.updateAt}</div>
             </a>
           )}
         </For>

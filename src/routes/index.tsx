@@ -1,16 +1,20 @@
-import { Octokit } from 'octokit'
+import { createSignal } from 'solid-js'
 import Collection from '~/components/Collection'
 import { Navbar } from '~/components/Navbar'
 import SearchBar from '~/components/SearchBar'
+import { filterComponents } from '~/data'
+import type { ComponentInfo } from '~/data/types'
 
 export default function Home() {
+  const [components, setComponents] = createSignal<ComponentInfo[]>([])
   const handleSearch = async (_value: string) => {
-    const octokit = new Octokit()
-    const response = await octokit.request('GET /repos/{owner}/{repo}', {
-      owner: 'solidjs',
-      repo: 'solid',
-    })
-    console.log(response)
+    const value = _value.trim()
+    if (!value) {
+      setComponents([])
+      return
+    }
+    const res = await filterComponents(value)
+    setComponents(res)
   }
   return (
     <main class="flex flex-col h-screen overflow-hidden bg-base">
@@ -23,7 +27,7 @@ export default function Home() {
                 <SearchBar onSearch={handleSearch} />
               </div>
               <div class="mt-4 of-y-auto">
-                <Collection />
+                <Collection components={components()} />
               </div>
             </div>
           </div>

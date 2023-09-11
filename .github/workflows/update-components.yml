@@ -1,0 +1,28 @@
+name: Update Components Info
+
+on:
+  watch:
+    types: started
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  update-components:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: pnpm install
+      - name: Update components info
+        run: esno .\scripts\update-components.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push
+        run: |-
+          git config --global user.email "bot@github.com" && git config --global user.name "Bot"
+          git diff
+          git add . && git commit -m ":memo: Update components info" || exit 0
+          git push
