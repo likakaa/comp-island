@@ -9,7 +9,8 @@ export const components: ComponentInfo[] = [
     framework: ['vue'],
     repository: 'https://github.com/ElemeFE/element',
     homepage: 'https://element.eleme.io/',
-    description: 'A Vue.js 2.0 UI Toolkit for Web',
+    description:
+      'A Vue.js 2.0 UI Toolkit for Web,A Vue.js 2.0 UI Toolkit for Web,A Vue.js 2.0 UI Toolkit for Web',
     language: 'Vue',
     license: 'MIT License',
     openIssues: 2620,
@@ -34,7 +35,7 @@ export const components: ComponentInfo[] = [
   {
     name: 'iview',
     type: ['ui'],
-    framework: ['vue'],
+    framework: ['vue', 'react'],
     repository: 'https://github.com/iview/iview',
     homepage: 'http://iview.talkingdata.com',
     description: 'A high quality UI Toolkit built on Vue.js 2.0',

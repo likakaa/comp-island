@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.21",
+    "@iconify-json/logos": "^1.1.36",
+    "@iconify-json/octicon": "^1.1.48",
     "@solid-primitives/media": "^2.2.5",
     "@solid-primitives/scheduled": "^1.4.1",
     "@types/eslint": "^8.44.2",
