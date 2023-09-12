@@ -23,9 +23,9 @@ jobs:
       
       - name: Commit
         run: |-
-          git config --global user.email "997909544@qq.com" && git config --global user.name "xbmlz"
-          git diff
-          git add . && git commit -m ":memo: Update components info" || exit 0
+          git config --global user.email "997909544@qq.com" 
+          git config --global user.name "xbmlz"
+          git commit -a -m  ":memo: Update components info"
 
       - name: Push
         uses: ad-m/github-push-action@master
