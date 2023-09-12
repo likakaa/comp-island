@@ -2,11 +2,11 @@ import { createSignal, mergeProps, onMount } from 'solid-js'
 import MarkdownIt from 'markdown-it'
 import Shikiji from 'markdown-it-shikiji'
 
-interface ReadMeProps {
+interface ReadmeProps {
   content: string
 }
 
-export default function ReadMe(_props: ReadMeProps) {
+export default function Readme(_props: ReadmeProps) {
   const props = mergeProps({}, _props)
   const [mdHTML, setMdHTML] = createSignal('')
   const render = async () => {

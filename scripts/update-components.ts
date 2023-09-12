@@ -36,7 +36,6 @@ async function run() {
     const final = `/* eslint-disable prettier/prettier */\n\n// DO NOTE EDIT THIS FILE, IT IS GENERATED AUTOMATICALLY \n\nimport type { ComponentInfo } from './types'\n\nexport const components: ComponentInfo[] = ${JSON.stringify(
       components,
       null,
-      // eslint-disable-next-line prettier/prettier
       2,
     )}\n`
 

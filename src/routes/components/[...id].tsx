@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import { useNavigate, useParams } from 'solid-start'
 import { fetchReadme } from '~/api/repo'
-import ReadMe from '~/components/ReadMe'
+import Readme from '~/components/Readme'
 
 export default function () {
   const params = useParams()
@@ -19,7 +19,7 @@ export default function () {
     <div>
       <h1>Repo: {params.id}</h1>
       <button onClick={goBack}>Go back</button>
-      <ReadMe content={readme()} />
+      <Readme content={readme()} />
     </div>
   )
 }
