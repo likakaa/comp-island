@@ -18,11 +18,11 @@ export default function Home() {
         <div class="flex h-screen flex-col overflow-hidden">
           <Navbar />
           <div class="flex-auto flex flex-col of-hidden">
-            <div class="grid-rows-[max-content_1fr] of-hidden">
-              <div class="md:mx-6 md:mt-6">
+            <div class="wrapper of-hidden">
+              <div class="md:mx-6 md:my-6">
                 <SearchBar onSearch={handleSearch} />
               </div>
-              <div class="mt-4 of-y-auto">
+              <div class="of-y-auto">
                 <Collection components={components()} />
               </div>
             </div>
