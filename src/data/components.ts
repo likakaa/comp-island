@@ -221,9 +221,9 @@ export const components: ComponentInfo[] = [
     language: 'TypeScript',
     license: 'MIT License',
     openIssues: 992,
-    stars: 87520,
+    stars: 87522,
     createAt: '2015-04-24T15:37:24Z',
-    updateAt: '2023-09-12T18:49:31Z',
+    updateAt: '2023-09-12T19:45:56Z',
   },
   {
     name: 'material-ui',
