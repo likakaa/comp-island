@@ -21,13 +21,10 @@ jobs:
       - name: Update components info
         run: npx esno ./scripts/update-components.ts
       
-      - name: Commit
-        run: |-
-          git config --global user.email "997909544@qq.com" 
-          git config --global user.name "xbmlz"
-          git commit -a -m  ":memo: Update components info"
-
-      - name: Push
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push
+        run: |
+          git config --global user.email "bot@github.com" && git config --global user.name "Bot"
+          git diff
+          git add .
+          git commit -m ":memo: update components info" || exit 0
+          git push
