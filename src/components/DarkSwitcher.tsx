@@ -15,10 +15,5 @@ export function DarkSwitcher() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
 
-  return (
-    <button
-      class="icon-button dark:i-carbon-moon i-carbon:sun"
-      onClick={toggleDark}
-    />
-  )
+  return <button class="icon-button dark:i-carbon-moon i-carbon:sun" onClick={toggleDark} />
 }

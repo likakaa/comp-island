@@ -7,17 +7,12 @@ import type { ComponentInfo } from '~/data/types'
 
 export default function Home() {
   const [components, setComponents] = createSignal<ComponentInfo[]>([])
-  const handleSearch = async (_value: string) => {
-    const value = _value.trim()
-    if (!value) {
-      setComponents([])
-      return
-    }
+  const handleSearch = async (value: string) => {
     const res = await filterComponents(value)
     setComponents(res)
   }
   onMount(() => {
-    handleSearch('vue')
+    handleSearch('')
   })
   return (
     <main class="flex flex-col h-screen overflow-hidden bg-base">

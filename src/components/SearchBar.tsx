@@ -42,10 +42,7 @@ export default function SearchBar(_props: SearchBarProps) {
         />
       </form>
       <Show when={keyword()}>
-        <button
-          class="flex items-center opacity-60 hover:opacity-80"
-          onClick={clear}
-        >
+        <button class="flex items-center opacity-60 hover:opacity-80" onClick={clear}>
           <div class="i-carbon-close m-auto text-lg -mr-1" onClick={clear} />
         </button>
       </Show>

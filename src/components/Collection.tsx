@@ -25,9 +25,10 @@ export default function Collection(_props: CollectionProps) {
           {(item) => (
             <A
               href="/about"
+              target="_blank"
               class="flex flex-col justify-between rd-md translate-z-0 items-center gap2 border p-16px transition-all border-base color-base hover:text-primary hover:shadow !hover:border-primary"
             >
-              <div class="flex flex-col w-full">
+              <div class="flex flex-col justify-between w-full h-full">
                 <div class="flex justify-between">
                   <div class="fcc">
                     <div class="i-octicon-repo-24 mr-2 text-14px" />
@@ -40,7 +41,7 @@ export default function Collection(_props: CollectionProps) {
                     {item.updateAt.split('T')[0]}
                   </div>
                 </div>
-                <div class="mt-2 mb-0 flex-grow flex-shrink-0 flex-basis-auto h-40px ">
+                <div class="mt-2 mb-0 flex-1 min-h-40px">
                   <a href={item.repository} target="_blank">
                     <p class="c-gray-500 text-12px">{item.description}</p>
                   </a>

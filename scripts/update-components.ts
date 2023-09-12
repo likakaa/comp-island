@@ -5,10 +5,7 @@ import { repos } from '../src/data/repos'
 import type { ComponentInfo } from '~/data/types'
 
 async function run() {
-  const gh = new Octokit({
-    auth: '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',
-    // auth: process.env.GITHUB_TOKEN!,
-  })
+  const gh = new Octokit()
   const components: ComponentInfo[] = []
   for (const r of repos) {
     const [owner, repo] = r.repository.split('/').slice(-2)
@@ -18,9 +15,14 @@ async function run() {
     })
     components.push({
       name: data.name,
+      author: data.owner.login,
+      authorAvatar: data.owner.avatar_url,
+      authorUrl: data.owner.html_url,
+      topics: data.topics,
       type: r.type,
       framework: r.framework,
       repository: r.repository,
+      defaultBranch: data.default_branch,
       homepage: data.homepage || '',
       description: data.description || '',
       language: data.language || '',
@@ -31,7 +33,7 @@ async function run() {
       updateAt: data.updated_at,
     })
     // path: src/data/components.ts
-    const final = `// DO NOTE EDIT THIS FILE \n\nimport type { ComponentInfo } from './types'\n\nexport const components: ComponentInfo[] = ${JSON.stringify(
+    const final = `/* eslint-disable prettier/prettier */\n\n// DO NOTE EDIT THIS FILE, IT IS GENERATED AUTOMATICALLY \n\nimport type { ComponentInfo } from './types'\n\nexport const components: ComponentInfo[] = ${JSON.stringify(
       components,
       null,
       // eslint-disable-next-line prettier/prettier
@@ -46,6 +48,7 @@ async function run() {
     await eslint.ESLint.outputFixes(results)
     await fs.writeFile('src/data/components.ts', results[0].output!, 'utf-8')
   }
+  console.info('update components successfully!')
 }
 
 run()

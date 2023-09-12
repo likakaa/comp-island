@@ -14,15 +14,17 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 18
+      
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
+      
       - name: Update components info
-        run: esno .\scripts\update-components.ts
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit and push
-        run: |-
+        run: npx esno ./scripts/update-components.ts
+      
+      - name: Commit and Push
+        run: |
           git config --global user.email "bot@github.com" && git config --global user.name "Bot"
           git diff
-          git add . && git commit -m ":memo: Update components info" || exit 0
+          git add .
+          git commit -m ":memo: update components info" || exit 0
           git push

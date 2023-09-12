@@ -29,7 +29,7 @@ export const repos: RepoInfo[] = [
   {
     type: ['ui'],
     framework: ['vue'],
-    repository: 'https://github.com/marcosmoura/vue-material',
+    repository: 'https://github.com/vuematerial/vue-material',
   },
   {
     type: ['ui'],
@@ -44,6 +44,6 @@ export const repos: RepoInfo[] = [
   {
     type: ['ui'],
     framework: ['react'],
-    repository: 'https://github.com/chakra-ui/chakra-ui/',
+    repository: 'https://github.com/chakra-ui/chakra-ui',
   },
 ]
