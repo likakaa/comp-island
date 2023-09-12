@@ -1,8 +1,23 @@
 .collections {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 }
 
 .wrapper {
-  display: grid; 
+  display: grid;
   grid-template-rows: max-content 1fr;
+}
+
+.badge-lime {
+  line-height: 16px;
+  border-radius: 4px;
+  background-color: #a3e6351a;
+  padding: 4px 10px;
+  color: rgba(132,204,22,var(--un-text-opacity));
+}
+
+.badge-gray{
+  height: 24px;
+  line-height: 24px;
+  border-radius: 4px;
+  background-color: #60a5fa1a;
 }

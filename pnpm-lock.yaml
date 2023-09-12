@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@solidjs/meta':
     specifier: ^0.28.6
@@ -27,6 +31,12 @@ devDependencies:
   '@iconify-json/carbon':
     specifier: ^1.1.21
     version: 1.1.21
+  '@iconify-json/logos':
+    specifier: ^1.1.36
+    version: 1.1.36
+  '@iconify-json/octicon':
+    specifier: ^1.1.48
+    version: 1.1.48
   '@solid-primitives/media':
     specifier: ^2.2.5
     version: 2.2.5(solid-js@1.7.11)
@@ -1602,6 +1612,18 @@ packages:
 
   /@iconify-json/carbon@1.1.21:
     resolution: {integrity: sha512-bK2cMVM4noBU+FGlay433flpXLRzQu0ED095iAnoO6ka3yb4uz0lvb8acpN5gthyGLJ89C4HpfIbQZLQnMKQww==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/logos@1.1.36:
+    resolution: {integrity: sha512-YdBiDwmomgedInuBS4YcQ+qpMkvixBhPqmwRLtnNp+qd9C/lKfM5Y4pNsSi6lRZSALiOqXxiZJZ1e9+L+BRrKQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/octicon@1.1.48:
+    resolution: {integrity: sha512-A5VRo/C3yfe0IoDUX1Mw5igYmO0iBrjFgPptGIDYRMu+d8QfHWs+DWG9v47KHfWDA/ayBImOdM1msgdEbqMqjg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -9370,7 +9392,3 @@ packages:
       string-width: registry.npmmirror.com/string-width@4.2.3
       y18n: registry.npmmirror.com/y18n@5.0.8
       yargs-parser: registry.npmmirror.com/yargs-parser@21.1.1
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

@@ -28,7 +28,8 @@ export const components: ComponentInfo[] = [
     repository: 'https://github.com/ElemeFE/element',
     defaultBranch: 'dev',
     homepage: 'https://element.eleme.io/',
-    description: 'A Vue.js 2.0 UI Toolkit for Web',
+    description:
+      'A Vue.js 2.0 UI Toolkit for Web,A Vue.js 2.0 UI Toolkit for Web,A Vue.js 2.0 UI Toolkit for Web',
     language: 'Vue',
     license: 'MIT License',
     openIssues: 2621,

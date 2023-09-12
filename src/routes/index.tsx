@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js'
+import { createSignal, onMount } from 'solid-js'
 import Collection from '~/components/Collection'
 import { Navbar } from '~/components/Navbar'
 import SearchBar from '~/components/SearchBar'
@@ -11,7 +11,9 @@ export default function Home() {
     const res = await filterComponents(value)
     setComponents(res)
   }
-  handleSearch('')
+  onMount(() => {
+    handleSearch('')
+  })
   return (
     <main class="flex flex-col h-screen overflow-hidden bg-base">
       <div class="h-full flex-auto overflow-overlay">
