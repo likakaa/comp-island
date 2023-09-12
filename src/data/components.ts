@@ -289,6 +289,6 @@ export const components: ComponentInfo[] = [
     openIssues: 206,
     stars: 34314,
     createAt: '2019-08-17T14:27:54Z',
-    updateAt: '2023-09-12T18:06:44Z',
+    updateAt: '2023-09-12T21:49:28Z',
   },
 ]
