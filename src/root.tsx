@@ -13,6 +13,7 @@ import {
 } from 'solid-start'
 import 'uno.css'
 import '@unocss/reset/tailwind.css'
+import './root.css'
 
 export default function Root() {
   return (
