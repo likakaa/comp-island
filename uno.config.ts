@@ -15,6 +15,8 @@ export default defineConfig({
     'color-base': 'text-gray-900 dark:text-gray-300',
     'color-fade': 'text-gray-900:50 dark:text-gray-300:50',
     'icon-button': 'op50 hover:op100 my-auto',
+    // eslint-disable-next-line prettier/prettier
+    'fcc': 'flex justify-center items-center',
   },
   theme: {
     color: {
