@@ -1,7 +1,7 @@
-import { createSignal } from 'solid-js'
+import { createSignal, onMount } from 'solid-js'
 import { useNavigate, useParams } from 'solid-start'
 import { fetchReadme } from '~/api/repo'
-import ReadMe from '~/components/ReadMe'
+import Readme from '~/components/Readme'
 
 export default function () {
   const params = useParams()
@@ -10,16 +10,20 @@ export default function () {
 
   const [readme, setReadme] = createSignal('')
 
+  const [owner, repo, branch] = params.id.split('/')
+
   const getReadme = async () => {
-    const mdStr = await fetchReadme('markdown-it', 'markdown-it', 'master')
+    const mdStr = await fetchReadme(owner, repo, branch)
     setReadme(mdStr)
+    // console.log(mdStr)
   }
-  getReadme()
+  onMount(async () => {
+    await getReadme()
+  })
   return (
-    <div>
-      <h1>Repo: {params.id}</h1>
+    <div class="of-y-scroll of-x-hidden">
       <button onClick={goBack}>Go back</button>
-      <ReadMe content={readme()} />
+      <Readme content={readme()} />
     </div>
   )
 }

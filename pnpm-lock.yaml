@@ -1,10 +1,9 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
+  '@primer/css':
+    specifier: ^21.0.8
+    version: 21.0.8
   '@solidjs/meta':
     specifier: ^0.28.6
     version: registry.npmmirror.com/@solidjs/meta@0.28.6(solid-js@1.7.11)
@@ -1590,6 +1589,54 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@github/auto-check-element@5.4.1:
+    resolution: {integrity: sha512-AJeHV1ifpby5Hp2wJIzcsdIB5YAq869F7ilNv2GygTVpHOSCfYSS29/hJ5GGTLgfKpPRgTmJcMi5OetKR8eH1g==}
+    dependencies:
+      '@github/mini-throttle': 2.1.1
+    dev: false
+
+  /@github/auto-complete-element@3.5.1:
+    resolution: {integrity: sha512-7/g6Nz6Zz4/k0m/L0n+OEO29WZcXgXwLJn7Ql02UbIMR2ClFEZIwIvvzb+3fEECOyLpFrZC/JH7Svz9RYPc+wA==}
+    dependencies:
+      '@github/combobox-nav': 2.1.7
+    dev: false
+
+  /@github/catalyst@1.6.0:
+    resolution: {integrity: sha512-u8A+DameixqpeyHzvnJWTGj+wfiskQOYHzSiJscCWVfMkIT3rxnbHMtGh3lMthaRY21nbUOK71WcsCnCrXhBJQ==}
+    dev: false
+
+  /@github/clipboard-copy-element@1.2.1:
+    resolution: {integrity: sha512-PLccyUCnzmOQ6zrRsH66rr67iumJyP5r7ij17ezprFQAK/oA8CXhlC8LTG+xpW3cYAvnp2zCgRNTfXS8wk09Lg==}
+    dev: false
+
+  /@github/combobox-nav@2.1.7:
+    resolution: {integrity: sha512-Webx0W5iTpkk5Chy9dB/1BEUORQ0qrwui8HaaVBiy75W2VOJg96WTuKj1rXENAJ3XTMhdEF53bn0LYfvP0EKvg==}
+    dev: false
+
+  /@github/details-menu-element@1.0.13:
+    resolution: {integrity: sha512-gMkii86w/oUP5dq8yOWZn1sgbgtFj3AYETxxtpsqRggZktgd8te4+npAn4Hm+936c/lxmEzXqfjARL/CzGR4+w==}
+    dev: false
+
+  /@github/image-crop-element@5.0.0:
+    resolution: {integrity: sha512-Vgm2OwWAs1ESoib/t5sjxsAYo6YTOxxAjWDRxswX7qrqoyCejTZ3hshdo4Ep5e+Mz/GVTZC3rdMtg06dk/eT4g==}
+    dev: false
+
+  /@github/include-fragment-element@6.3.0:
+    resolution: {integrity: sha512-BJTt8ZE/arsbC9lQtTH8c1hZS0ZigiN+kzH54ffQ6MhHLT83h0OpSdS9NEVocPl2uuO6w3qxnEKTDzUGMQ5rdQ==}
+    dev: false
+
+  /@github/mini-throttle@2.1.1:
+    resolution: {integrity: sha512-KtOPaB+FiKJ6jcKm9UKyaM5fPURHGf+xcp+b4Mzoi81hOc6M1sIGpMZMAVbNzfa2lW5+RPGKq888Px0j76OZ/A==}
+    dev: false
+
+  /@github/relative-time-element@4.3.0:
+    resolution: {integrity: sha512-+tFjX9//HRS1HnBa5cNgfEtE52arwiutYg1TOF+Trk40SPxst9Q8Rtc3BKD6aKsvfbtub68vfhipgchGjj9o7g==}
+    dev: false
+
+  /@github/tab-container-element@3.3.0:
+    resolution: {integrity: sha512-vHlN/GXgaJFJhh4oUYRh1pc4RAqduKlQOrEjVgSxR4JhLXsQcZ/hKWfCsRZAuZbSPzUGEYvggdieamS4FRSe4g==}
+    dev: false
+
   /@humanwhocodes/config-array@0.11.11:
     resolution: {integrity: sha512-N2brEuAadi0CcdeMXUkhbZB84eskAc8MEX1By6qEchoVywSgXPIjou4rYsl0V3Hj0ZnuGycGCjdNgockbzeWNA==}
     engines: {node: '>=10.10.0'}
@@ -1935,9 +1982,45 @@ packages:
       aggregate-error: 3.1.0
     dev: false
 
+  /@oddbird/popover-polyfill@0.2.2:
+    resolution: {integrity: sha512-ko7x+PDZA9bHwA6hSfxjL1IhBP91JukfZq/NAe85u9rT0akFn9RKvSXymX/mS7S2mfNjE+Zw9JdLUPGvPabQAA==}
+    dev: false
+
   /@polka/url@1.0.0-next.23:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
     dev: true
+
+  /@primer/behaviors@1.3.5:
+    resolution: {integrity: sha512-HWwz+6MrfK5NTWcg9GdKFpMBW/yrAV937oXiw2eDtsd88P3SRwoCt6ZO6QmKp9RP3nDU9cbqmuGZ0xBh0eIFeg==}
+    dev: false
+
+  /@primer/css@21.0.8:
+    resolution: {integrity: sha512-nyJnLwNvqZKN9t2ho0ccTKV5Z9QOQayZT+lycWCwkPmNOyMfGlod8mLFHLYd80Ea7H5784QeOl2+3gh710Yt/g==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@primer/primitives': 7.12.0
+      '@primer/view-components': 0.5.1
+    dev: false
+
+  /@primer/primitives@7.12.0:
+    resolution: {integrity: sha512-QKNxfWm7Ik1Ulswyp3KeUL2xnQj8i0E7DdB6lOrh29o7LgyuutwcOHi4CGapBIOR1fYURu+yROSTHQ2C2aDK7A==}
+    dev: false
+
+  /@primer/view-components@0.5.1:
+    resolution: {integrity: sha512-TI51R4rVobwK6sWRhu7HRHC6yxud2I9P1sYN6o/fHhIq7QU31mJyv1PtD8nfhmOqN/SsRC6q3pnCbh5Qt1wD/g==}
+    dependencies:
+      '@github/auto-check-element': 5.4.1
+      '@github/auto-complete-element': 3.5.1
+      '@github/catalyst': 1.6.0
+      '@github/clipboard-copy-element': 1.2.1
+      '@github/details-menu-element': 1.0.13
+      '@github/image-crop-element': 5.0.0
+      '@github/include-fragment-element': 6.3.0
+      '@github/relative-time-element': 4.3.0
+      '@github/tab-container-element': 3.3.0
+      '@oddbird/popover-polyfill': 0.2.2
+      '@primer/behaviors': 1.3.5
+    dev: false
 
   /@rollup/plugin-babel@6.0.3(@babel/core@7.22.17)(rollup@3.29.0):
     resolution: {integrity: sha512-fKImZKppa1A/gX73eg4JGo+8kQr/q1HBQaCGKECZ0v4YBBv3lFqi14+7xyApECzvkLTHCifx+7ntcrvtBIRcpg==}
@@ -9392,3 +9475,7 @@ packages:
       string-width: registry.npmmirror.com/string-width@4.2.3
       y18n: registry.npmmirror.com/y18n@5.0.8
       yargs-parser: registry.npmmirror.com/yargs-parser@21.1.1
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

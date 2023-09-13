@@ -1,6 +1,5 @@
 import { createSignal, onMount } from 'solid-js'
-import Collection from '~/components/Collection'
-import { Navbar } from '~/components/Navbar'
+import Collection from '~/components/ComponentList'
 import SearchBar from '~/components/SearchBar'
 import { filterComponents } from '~/data'
 import type { ComponentInfo } from '~/data/types'
@@ -15,22 +14,19 @@ export default function Home() {
     handleSearch('')
   })
   return (
-    <main class="flex flex-col h-screen overflow-hidden bg-base">
-      <div class="h-full flex-auto overflow-overlay">
-        <div class="flex h-screen flex-col overflow-hidden">
-          <Navbar />
-          <div class="flex-auto flex flex-col of-hidden">
-            <div class="wrapper of-hidden">
-              <div class="md:mx-6 md:my-6">
-                <SearchBar onSearch={handleSearch} />
-              </div>
-              <div class="of-y-auto">
-                <Collection components={components()} />
-              </div>
+    <div class="h-full flex-auto overflow-overlay">
+      <div class="flex h-screen flex-col overflow-hidden">
+        <div class="flex-auto flex flex-col of-hidden">
+          <div class="wrapper of-hidden">
+            <div class="md:mx-6 md:my-6">
+              <SearchBar onSearch={handleSearch} />
+            </div>
+            <div class="of-y-auto">
+              <Collection components={components()} />
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

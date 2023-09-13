@@ -3,5 +3,6 @@
     "@xbmlz/eslint-config-ts",
     "@xbmlz/eslint-config-prettier",
     "@xbmlz/eslint-config-solid"
-  ]
+  ],
+  "ignorePatterns": [".github", ".solid"]
 }

@@ -14,6 +14,5 @@ export function DarkSwitcher() {
     const isDark = docEl.classList.contains('dark')
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
-
   return <button class="icon-button dark:i-carbon-moon i-carbon:sun" onClick={toggleDark} />
 }
