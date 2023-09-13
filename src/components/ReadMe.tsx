@@ -1,33 +1,13 @@
-import { createSignal, mergeProps, onMount } from 'solid-js'
-import MarkdownIt from 'markdown-it'
-import Shikiji from 'markdown-it-shikiji'
+import Markdown from './Markdown'
 
 interface ReadmeProps {
   content: string
 }
 
-export default function Readme(_props: ReadmeProps) {
-  const props = mergeProps({}, _props)
-  const [mdHTML, setMdHTML] = createSignal('')
-  const render = async () => {
-    const md = MarkdownIt()
-    md.use(
-      await Shikiji({
-        themes: {
-          light: 'vitesse-light',
-          dark: 'vitesse-dark',
-        },
-      }),
-    )
-    setMdHTML(md.render(props.content))
-  }
-  onMount(async () => {
-    await render()
-  })
+export default function Readme(props: ReadmeProps) {
   return (
-    <div>
-      {/* eslint-disable-next-line solid/no-innerhtml */}
-      <div class="prose prose-sm m-auto text-left" innerHTML={mdHTML()} />
+    <div class="px-5 pb-5 py-1">
+      <Markdown content={props.content} />
     </div>
   )
 }

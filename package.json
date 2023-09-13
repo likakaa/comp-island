@@ -13,6 +13,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@primer/css": "^21.0.8",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",
     "fzf": "^0.5.2",

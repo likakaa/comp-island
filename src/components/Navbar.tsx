@@ -1,6 +1,6 @@
 import { DarkSwitcher } from './DarkSwitcher'
 
-export function Navbar() {
+export default function Navbar() {
   return (
     <nav class="relative z-10 flex flex-none gap-4 border-b p4 text-xl border-base bg-base">
       <div class="flex-auto" />
