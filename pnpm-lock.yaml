@@ -87,6 +87,9 @@ devDependencies:
   postcss:
     specifier: ^8.4.28
     version: registry.npmmirror.com/postcss@8.4.29
+  punycode:
+    specifier: ^2.3.0
+    version: 2.3.0
   solid-start-netlify:
     specifier: ^0.3.5
     version: 0.3.5(solid-start@0.3.5)
