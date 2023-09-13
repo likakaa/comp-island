@@ -24,9 +24,9 @@ export default function ComponentItem(props: ComponentItemProps) {
   return (
     <button
       onClick={handleClick}
-      class="flex flex-col justify-between rd-md translate-z-0 items-center gap2 border p-16px transition-all border-base color-base hover:text-primary hover:shadow !hover:border-primary"
+      class="flex flex-col justify-between items-center rd-6px translate-z-0 gap2 border p-16px border-base color-base"
     >
-      <div class="flex flex-col justify-between w-full h-full">
+      <div class=" flex flex-col justify-between w-full h-full">
         <div class="flex justify-between">
           <div class="fcc">
             <div class="i-octicon-repo-24 mr-2 text-14px" />

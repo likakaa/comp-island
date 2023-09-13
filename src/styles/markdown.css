@@ -5,4 +5,10 @@
   border: 1px solid #c8c8ff0d !important;
 }
 
+img{
+  display: inline-block!important;
+}
 
+a{
+  text-decoration:none!important;
+}
