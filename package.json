@@ -43,7 +43,6 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shikiji": "^0.6.8",
     "postcss": "^8.4.28",
-    "punycode": "^2.3.0",
     "solid-start-netlify": "^0.3.5",
     "solid-start-node": "^0.3.5",
     "typescript": "^4.9.5",
