@@ -1,3 +1,2 @@
 [build]
   publish = "netlify/"
-  functions = "netlify/edge-functions/"

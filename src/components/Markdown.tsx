@@ -1,6 +1,7 @@
 import MarkdownIt from 'markdown-it'
 import { createEffect, createSignal } from 'solid-js'
 import Shikiji from 'markdown-it-shikiji'
+import LinkAttributes from 'markdown-it-link-attributes'
 
 interface MarkdownProps {
   content: string
@@ -9,9 +10,7 @@ interface MarkdownProps {
 export default function Markdown(props: MarkdownProps) {
   const md = MarkdownIt({
     html: true,
-    linkify: true,
   })
-
   const [html, setHtml] = createSignal('')
   const render = async () => {
     const html = md
@@ -23,6 +22,13 @@ export default function Markdown(props: MarkdownProps) {
           },
         }),
       )
+      .use(LinkAttributes, {
+        matcher: (link: string) => /^https?:\/\//.test(link),
+        attrs: {
+          target: '_blank',
+          rel: 'noopener',
+        },
+      })
       .render(props.content)
     setHtml(html)
   }
