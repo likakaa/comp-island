@@ -44,8 +44,8 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shikiji": "^0.6.8",
     "postcss": "^8.4.28",
-    "solid-start-netlify": "^0.3.5",
-    "solid-start-node": "^0.3.5",
+    "solid-start-netlify": "^0.2.7",
+    "solid-start-node": "^0.2.7",
     "typescript": "^4.9.5",
     "unocss": "^0.55.7",
     "vite": "^4.4.9"
