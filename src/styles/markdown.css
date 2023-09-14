@@ -5,4 +5,11 @@
   border: 1px solid #c8c8ff0d !important;
 }
 
+.prose img {
+  display: inline-block !important;
+}
 
+/** 如果a标签包含img则不显示下划线 */
+.prose a:has(img) {
+  text-decoration: none;
+}

@@ -17,14 +17,12 @@ export default function ComponentItem(props: ComponentItemProps) {
   }
   const navigate = useNavigate()
   const handleClick = () => {
-    const [owner, repo] = props.item.repository.split('/').slice(-2)
-    const defaultBranch = props.item.defaultBranch
-    navigate(`/component/${owner}/${repo}/${defaultBranch}`)
+    navigate(`/component/${props.item.id}`)
   }
   return (
-    <button
+    <a
       onClick={handleClick}
-      class="flex flex-col justify-between rd-md translate-z-0 items-center gap2 border p-16px transition-all border-base color-base hover:text-primary hover:shadow !hover:border-primary"
+      class="cursor-pointer flex flex-col justify-between rd-md translate-z-0 items-center gap2 border p-16px transition-all border-base color-base hover:text-primary hover:shadow !hover:border-primary"
     >
       <div class="flex flex-col justify-between w-full h-full">
         <div class="flex justify-between">
@@ -62,6 +60,6 @@ export default function ComponentItem(props: ComponentItemProps) {
           </div>
         </div>
       </div>
-    </button>
+    </a>
   )
 }

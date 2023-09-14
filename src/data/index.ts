@@ -14,3 +14,7 @@ export const filterComponents = async (q: string) => {
   const result = await fzf.find(trimmed)
   return result.map((i) => i.item)
 }
+
+export const fileterComponentByID = (id: number) => {
+  return components.find((i) => i.id === id)
+}

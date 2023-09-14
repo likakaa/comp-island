@@ -7,10 +7,6 @@ import netlifyAdapter from 'solid-start-netlify'
 export default defineConfig({
   plugins: [
     solid({
-      experimental: {
-        islands: true,
-        islandsRouter: true,
-      },
       ssr: true,
       adapter: netlifyAdapter(),
     }),
@@ -18,6 +14,6 @@ export default defineConfig({
   ],
   build: {
     target: 'esnext',
-    minify: 'esbuild'
-  }
+    minify: 'esbuild',
+  },
 })

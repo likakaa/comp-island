@@ -14,6 +14,7 @@ async function run() {
       repo,
     })
     components.push({
+      id: data.id,
       name: data.name,
       author: data.owner.login,
       authorAvatar: data.owner.avatar_url,
