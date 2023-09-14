@@ -1,5 +1,6 @@
 import { For, Show, createSignal, onMount } from 'solid-js'
-import { useParams } from 'solid-start'
+import { Title, useParams } from 'solid-start'
+import Giscus from '~/components/Giscus'
 import { fetchRaw } from '~/api/repo'
 import Markdown from '~/components/Markdown'
 import { fileterComponentByID } from '~/data'
@@ -7,8 +8,6 @@ import type { ComponentInfo } from '~/data/types'
 
 export default function () {
   const params = useParams()
-  // const navigate = useNavigate()
-  // const goBack = () => navigate(-1)
   const [readMe, setReadMe] = createSignal('')
   const [changeLog, setChangeLog] = createSignal('')
   const [info, setInfo] = createSignal<ComponentInfo>()
@@ -29,47 +28,41 @@ export default function () {
   const handleTabChanged = (id: number) => {
     setActiveTab(id)
   }
-
-  // // TODO 404
-
+  // TODO 404
   const fetchInfo = async () => {
     const [owner, repo] = info()?.repository?.split('/').slice(-2) || []
     const readMeStr = await fetchRaw(owner, repo, info()?.defaultBranch || 'main', 'README.md')
-    let changeLogStr = await fetchRaw(owner, repo, info()?.defaultBranch || 'main', 'CHANGELOG.md')
-    if (!changeLogStr) {
-      changeLogStr = await fetchRaw(owner, repo, info()?.defaultBranch || 'main', 'CHANGELOG.zh-CN.md')
-    }
+    const changeLogStr = await fetchRaw(owner, repo, info()?.defaultBranch || 'main', 'CHANGELOG.md')
     setReadMe(readMeStr)
     setChangeLog(changeLogStr)
   }
-  onMount(async () => {
+  onMount(() => {
     setInfo(fileterComponentByID(+params.id))
-    await fetchInfo()
+    fetchInfo()
   })
   return (
-    <main>
-      <div class="flex flex-row flex-wrap pb5 px-1 min-w-full mt-2">
-        {/* <button onClick={goBack}>Go back</button> */}
-        <div class="w-full max-w-1200px m-auto ">
-          <h2 class="max-w-full no-underline mt3 m-0 text-2xl w-full justify-start items-center flex-row flex">
-            <span class="font-semibold truncate c-black mb-2">{info()?.name}</span>
-            <div>
-              <a href="#" class="flex">
-                <span class="text-sm ml-3">{info()?.type}</span>
-              </a>
-            </div>
-          </h2>
-          <span class="text-nowrap text-sm py-.5 c-gray-8 font-mono font-400 mb-.5">2.3.0 &nbsp;•&nbsp;</span>
-          <span class="text-nowrap text-sm py-.5 c-green-6 font-mono font-400 mb-.5">Public &nbsp;•&nbsp;</span>
-          <span class="text-nowrap text-sm py-.5 c-gray-8 font-mono font-400 mb-.5">Updated 8 months ago</span>
-        </div>
-        <ul class="flex flex-row p0 w-full max-w-1200px items-center list-none m-auto" role="tablist">
+    <div class="px-6 max-w-1200px mx-auto md:px-0 w-full">
+      <Title>{`${info()?.author}/${info()?.name}`}</Title>
+      {/* <button onClick={goBack}>Go back</button> */}
+      <header class="overflow-hidden pt-6 pb-6 md:pt-12">
+        <h2 class="max-w-full no-underline mt3 m-0 text-[3rem] w-full justify-start items-center flex">
+          <span class="font-semibold truncate mb-2">{info()?.name}</span>
+          <div>
+            <a href="#" class="flex">
+              <span class="text-sm ml-3">{info()?.type}</span>
+            </a>
+          </div>
+        </h2>
+        <span class="text-nowrap text-sm py-.5 font-400 mb-.5">2.3.0 &nbsp;•&nbsp;</span>
+        <span class="text-nowrap text-sm py-.5 c-green-6 font-400 mb-.5">Public &nbsp;•&nbsp;</span>
+        <span class="text-nowrap text-sm py-.5 font-400 mb-.5">Updated 8 months ago</span>
+        <ul class="flex p0" role="tablist">
           <For each={tabs}>
             {(item) => (
               <li
                 class={`${
                   activeTab() === item.id ? 'border-opacity-90' : 'border-opacity-0'
-                } relative inline-flex text-sm font-sans transition leading-snug items-center bg-slate-500 bg-opacity-0 hover:bg-opacity-5 overflow-hidden border-blue-7 dark:border-gray-200 border-b-2 dark:border-opacity-0 dark:hover:border-opacity-10`}
+                } relative inline-flex text-sm font-sans transition leading-snug items-center bg-slate-500 bg-opacity-0 hover:bg-opacity-5 overflow-hidden border-green-6 dark:border-gray-200 border-b-2 dark:border-opacity-0 dark:hover:border-opacity-10`}
                 role="tab"
                 id={`${item.id}`}
                 onClick={() => handleTabChanged(item.id)}
@@ -81,15 +74,29 @@ export default function () {
             )}
           </For>
         </ul>
-        <div class="min-w-full">
-          <Show when={activeTab() === 1}>
-            <Markdown content={readMe()} />
-          </Show>
-          <Show when={activeTab() === 2}>
-            <Markdown content={changeLog()} />
-          </Show>
-        </div>
-      </div>
-    </main>
+      </header>
+      <main class="prose m-auto dark:prose-invert pb-10">
+        <Show when={activeTab() === 1}>
+          <Markdown content={readMe()} />
+        </Show>
+        <Show when={activeTab() === 2}>
+          <Markdown content={changeLog()} />
+        </Show>
+        <Giscus
+          id="comments"
+          repo="comp-island/giscus"
+          repoId="R_kgDOKTcTvw"
+          category="General"
+          categoryId="DIC_kwDOKTcTv84CZTEU"
+          mapping="title"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="bottom"
+          theme="light"
+          lang="zh-CN"
+          loading="lazy"
+        />
+      </main>
+    </div>
   )
 }

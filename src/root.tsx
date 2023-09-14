@@ -1,6 +1,6 @@
 // @refresh reload
 import { Suspense, onMount } from 'solid-js'
-import { Body, ErrorBoundary, FileRoutes, Head, Html, Meta, Routes, Scripts, Title } from 'solid-start'
+import { Body, ErrorBoundary, FileRoutes, Head, Html, Link, Meta, Routes, Scripts, Title } from 'solid-start'
 import 'uno.css'
 import '@unocss/reset/tailwind.css'
 import './styles/root.css'
@@ -21,8 +21,9 @@ export default function Root() {
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta name="description" content="组件岛" />
+        <Link rel="icon" href="/favicon.svg" />
       </Head>
-      <Body class="flex flex-col h-screen overflow-hidden bg-base color-base">
+      <Body class="flex bg-base color-base">
         <Suspense>
           <ErrorBoundary>
             <Navbar />

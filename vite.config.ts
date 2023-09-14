@@ -13,7 +13,7 @@ export default defineConfig({
     unocss(),
   ],
   build: {
-    target: 'esnext',
+    target: ['es2021', 'chrome100', 'safari13'],
     minify: 'esbuild',
   },
 })

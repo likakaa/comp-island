@@ -22,14 +22,14 @@ export default function ComponentItem(props: ComponentItemProps) {
   return (
     <a
       onClick={handleClick}
-      class="cursor-pointer flex flex-col justify-between rd-md translate-z-0 items-center gap2 border p-16px transition-all border-base color-base hover:text-primary hover:shadow !hover:border-primary"
+      class="cursor-pointer flex flex-col justify-between translate-z-0 items-center gap2 border p-16px transition-all border-base color-base hover:shadow"
     >
       <div class="flex flex-col justify-between w-full h-full">
         <div class="flex justify-between">
           <div class="fcc">
-            <div class="i-octicon-repo-24 mr-2 text-14px" />
+            <div class="i-octicon-repo-24 mr-2 text-14px c-gray-500" />
             <span class="c-blue-500 text-14px">{props.item.name}</span>
-            <span class="h-18px lh-18px b b-gray-400 c-gray rd-2em text-12px px-2 ml-2 font-500">
+            <span class="h-18px lh-18px b b-gray-500 c-gray-500 rd-2em text-12px px-2 ml-2 font-500">
               {props.item.type}
             </span>
           </div>

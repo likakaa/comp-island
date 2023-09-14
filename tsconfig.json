@@ -4,14 +4,21 @@
     "esModuleInterop": true,
     "target": "ESNext",
     "module": "ESNext",
+    "noEmit": true,
+    "checkJs": true,
+    "skipLibCheck": true,
     "moduleResolution": "node",
     "jsxImportSource": "solid-js",
     "jsx": "preserve",
+    "allowJs": true,
     "strict": true,
+    "types": ["vite/client"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": "./",
     "paths": {
       "~/*": ["./src/*"]
-    },
+    }
   },
-  "exclude": [".netlify", "netlify"]
+  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.js", "./**/*.jsx"],
+  "exclude": ["node_modules", "**/node_modules/*", "dist"]
 }

@@ -34,5 +34,5 @@ export default function Markdown(props: MarkdownProps) {
   })
 
   // eslint-disable-next-line solid/no-innerhtml
-  return <div class="prose prose-sm m-auto text-left" innerHTML={html()} />
+  return <div class="prose prose-sm min-w-prose text-left" innerHTML={html()} />
 }
