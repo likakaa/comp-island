@@ -3,6 +3,7 @@ export type ComponentType = 'ui' | 'chart' | 'editor' | 'table' | 'form' | 'map'
 export type DeviceType = 'responsive' | 'mobile' | 'desktop' | 'tablet'
 
 export interface ComponentInfo {
+  id: number
   name: string
   author: string
   authorUrl?: string

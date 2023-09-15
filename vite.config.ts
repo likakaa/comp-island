@@ -7,8 +7,13 @@ import netlifyAdapter from 'solid-start-netlify'
 export default defineConfig({
   plugins: [
     solid({
-      adapter: netlifyAdapter({ edge: true }),
+      ssr: true,
+      adapter: netlifyAdapter(),
     }),
     unocss(),
   ],
+  build: {
+    target: ['es2021', 'chrome100', 'safari13'],
+    minify: 'esbuild',
+  },
 })

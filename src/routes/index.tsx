@@ -1,4 +1,4 @@
-import { createSignal, onMount } from 'solid-js'
+import { For, createSignal, onMount } from 'solid-js'
 import Collection from '~/components/ComponentList'
 import SearchBar from '~/components/SearchBar'
 import { filterComponents } from '~/data'
@@ -10,18 +10,35 @@ export default function Home() {
     const res = await filterComponents(value)
     setComponents(res)
   }
+
+  // TODO
+  const categories = ['Framework', 'Table', 'Form', 'Chart', 'Map', 'Notification']
+
   onMount(() => {
     handleSearch('')
   })
   return (
-    <div class="h-full flex-auto overflow-overlay">
-      <div class="flex h-screen flex-col overflow-hidden">
-        <div class="flex-auto flex flex-col of-hidden">
-          <div class="wrapper of-hidden">
-            <div class="md:mx-6 md:my-6">
-              <SearchBar onSearch={handleSearch} />
+    <div class="flex of-hidden pt-12 relative flex-grow">
+      <div class="flex h-screen w-full">
+        <div class="max-w-1200px w-full mx-auto">
+          <div class="md:mx-6 md:my-6">
+            <SearchBar onSearch={handleSearch} />
+          </div>
+          <div class="flex container md:mx-6 md:my-6">
+            <div class="absolute z-20 left-0 h-full lg:static lg:w-3/12">
+              <div class="text-lg op-60">Filter</div>
+              <div class="py-4">
+                <For each={categories}>
+                  {(item) => (
+                    <button class="mb2 flex items-center w-full text-sm px-4 py-2 min-h-[50px] text-left border border-base color-base hover:shadow">
+                      <span class="c-gray-500">{item}</span>
+                      <span class="ml-auto text-center text-gray-400 text-xs">26</span>
+                    </button>
+                  )}
+                </For>
+              </div>
             </div>
-            <div class="of-y-auto">
+            <div class="w-full lg:w-9/12">
               <Collection components={components()} />
             </div>
           </div>

@@ -13,10 +13,21 @@ html.dark {
   color-scheme: dark;
 }
 
+main {
+  position: relative;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .component-list {
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 }
-
 
 /* Scrollbar */
 * {

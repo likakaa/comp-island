@@ -16,13 +16,14 @@ export default defineConfig({
     'bg-base': 'bg-white dark:bg-[#181818]',
     'color-base': 'text-gray-900 dark:text-gray-300',
     'color-fade': 'text-gray-900:50 dark:text-gray-300:50',
-    'icon-button': 'op50 hover:op100 my-auto',
+    'icon-button': 'op60 hover:op100 my-auto',
     // eslint-disable-next-line prettier/prettier
     'fcc': 'flex justify-center items-center',
   },
   theme: {
     color: {
       primary: '#1677ff',
+      demo: '#ff0000',
       dark: {
         100: '#222',
         200: '#333',
@@ -39,7 +40,9 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetAttributify(),
-    presetIcons(),
+    presetIcons({
+      scale: 1.2,
+    }),
     presetTypography(),
     presetWebFonts({
       fonts: {
