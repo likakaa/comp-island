@@ -35,7 +35,7 @@ export const components: ComponentInfo[] = [
     openIssues: 2965,
     stars: 54052,
     createAt: '2016-09-03T06:19:26Z',
-    updateAt: '2026-09-06T00:52:49Z',
+    updateAt: '2026-09-06T15:33:25Z',
   },
   {
     id: 51728141,
@@ -71,7 +71,7 @@ export const components: ComponentInfo[] = [
     openIssues: 405,
     stars: 17458,
     createAt: '2016-02-15T03:23:27Z',
-    updateAt: '2026-09-04T08:14:56Z',
+    updateAt: '2026-09-06T04:54:01Z',
   },
   {
     id: 64355429,
@@ -106,7 +106,7 @@ export const components: ComponentInfo[] = [
     openIssues: 1238,
     stars: 23767,
     createAt: '2016-07-28T01:52:59Z',
-    updateAt: '2026-09-06T00:52:34Z',
+    updateAt: '2026-09-06T04:53:19Z',
   },
   {
     id: 59010815,
@@ -136,7 +136,7 @@ export const components: ComponentInfo[] = [
     openIssues: 291,
     stars: 16434,
     createAt: '2016-05-17T09:54:10Z',
-    updateAt: '2026-09-03T06:23:32Z',
+    updateAt: '2026-09-06T04:54:10Z',
   },
   {
     id: 68556226,
@@ -166,7 +166,7 @@ export const components: ComponentInfo[] = [
     openIssues: 186,
     stars: 8139,
     createAt: '2016-09-19T00:51:10Z',
-    updateAt: '2026-09-01T18:28:03Z',
+    updateAt: '2026-09-06T05:48:27Z',
   },
   {
     id: 61406260,
@@ -198,7 +198,7 @@ export const components: ComponentInfo[] = [
     openIssues: 242,
     stars: 9823,
     createAt: '2016-06-17T22:41:53Z',
-    updateAt: '2026-09-04T00:49:47Z',
+    updateAt: '2026-09-06T05:47:32Z',
   },
   {
     id: 34526884,
@@ -227,10 +227,10 @@ export const components: ComponentInfo[] = [
     description: 'An enterprise-class UI design language and React UI library',
     language: 'TypeScript',
     license: 'MIT License',
-    openIssues: 1111,
-    stars: 99399,
+    openIssues: 1108,
+    stars: 99408,
     createAt: '2015-04-24T15:37:24Z',
-    updateAt: '2026-09-06T00:49:28Z',
+    updateAt: '2026-09-07T02:29:37Z',
   },
   {
     id: 23083156,
@@ -258,9 +258,9 @@ export const components: ComponentInfo[] = [
     language: 'JavaScript',
     license: 'MIT License',
     openIssues: 1485,
-    stars: 99014,
+    stars: 99019,
     createAt: '2014-08-18T19:11:54Z',
-    updateAt: '2026-09-05T21:14:04Z',
+    updateAt: '2026-09-07T02:15:50Z',
   },
   {
     id: 202890778,
@@ -298,9 +298,9 @@ export const components: ComponentInfo[] = [
     description: 'Chakra UI is a component system for building SaaS products with speed ⚡️',
     language: 'TypeScript',
     license: 'MIT License',
-    openIssues: 13,
-    stars: 40627,
+    openIssues: 14,
+    stars: 40632,
     createAt: '2019-08-17T14:27:54Z',
-    updateAt: '2026-09-05T20:38:55Z',
+    updateAt: '2026-09-06T21:19:01Z',
   },
 ]
